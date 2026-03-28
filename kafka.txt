@@ -1,0 +1,126 @@
+Apache Kafka is a distributed event streaming platform used to
+
+build real-time data pipelines and streaming applications.
+
+
+It is designed to:
+
+Handle high-throughput
+
+Provide fault tolerance
+
+Enable real-time data processing
+
+Decouple microservices
+
+
+1️⃣ Why Kafka Was Created (The Problem)
+
+
+❌ Problem 1: Tight Coupling Between Services
+
+Service A directly calls Service B via REST.
+
+If B is down → A fails
+
+Hard to scale independently
+
+Difficult to add new consumers
+
+
+
+❌ Problem 2: Data Loss
+
+Traditional messaging systems:
+
+Limited durability
+
+Messages lost during crashes
+
+
+
+❌ Problem 3: Scalability Issues
+
+Database polling for changes = heavy load
+
+Traditional queues couldn’t handle millions of events/sec
+
+
+
+❌ Problem 4: Real-time Processing Was Hard
+
+Batch processing (cron jobs, ETL) caused:
+
+Delayed insights
+
+Slow analytics
+
+
+2️⃣ What Solution Kafka Provides
+
+Kafka solves this using Distributed Log-based Architecture
+
+Instead of:
+
+Service A → Service B
+
+We use:
+
+Service A → Kafka → Service B, C, D
+
+✅ Decoupling
+
+Producer doesn't know who consumes the data.
+
+✅ High Throughput
+
+Millions of messages per second.
+
+✅ Durability
+
+Messages stored on disk safely.
+
+✅ Scalability
+
+Horizontal scaling via partitions.
+
+✅ Replay Capability
+
+You can reprocess old event
+
+
+
+3️⃣ Core Concepts (Must Know Deeply)
+
+
+🔹 1. Producer
+
+Application that sends data to Kafka.
+
+Example:
+
+Order Service sends "Order Created" event
+
+
+🔹 2. Consumer
+
+Application that reads data from Kafka.
+
+Example:
+
+Payment Service
+
+Notification Service
+
+Analytics Service
+
+
+🔹 3. Topic
+
+A category/channel where messages are stored.
+
+Example:
+
+order-topic
+payment-topic
+user-topic

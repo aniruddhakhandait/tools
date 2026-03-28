@@ -71,7 +71,50 @@ docker pull imagename: version
 docker run -p 3000:3000
 
 
-docker volumn
+docker volume
+store data
+docker run -it --rm -v myvolume:/myapp/ (name : path) image Id
+
+docker volume --help (all)
+docker volume ls
+
+bind mounts
+depend upon external file
+docker run -v /local file location :/myapp/servers.txt (container) --rm image Id
+
+
+.dockerignore
+mention file you want to ignore
+
+From / To
+connected outside - api (server) | db |
+
+api
+
+RUN pip install requests
+
+local env
+
+RUN pip install pymysql
+
+docker run -it --rm imageID
+host = "host.docker.internal"
+(container) -> local env
+
+container communication
+
+docker run -d (detach) --env  --name mysql db
+
+
+
+
+
+
+
+
+
+
+
 
 
 upto 1:38

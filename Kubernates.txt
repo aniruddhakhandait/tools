@@ -145,4 +145,172 @@ features
 installation
 
 
-upto : 38:07
+Deployment
+Pod - container - image
+
+
+kubectl create deployment my-ngnix(name) -- image =nginx(repo):latest
+
+kubectl get deployments
+kubectl get pods
+
+minikube dashboard
+port binding
+service object (image - server(outside))
+kubectl expose deloyment my-ngnix(name) --port = 80 --type=LoadBalancer
+
+minikube service my-nginx
+
+
+commands used
+
+minikube start | delete (cluster)
+minikube status
+
+minikube dashboard
+
+kubectl create deployment my-ngnix(name) -- image =nginx(repo):latest
+
+kubectl get deployments
+kubectl get pods
+
+
+kubectl delete deployment my-ngnix(name)
+
+
+Basic modules
+project
+
+Build docker image
+
+push public repo
+
+
+minikube start
+
+kubectl create deployment my-ngnix(name) -- image =nginx(repo):latest
+
+
+kubectl get deployments (status)
+
+kubectl get pods
+
+kubectl logs (pods name)
+
+kubectl describe pods (extra info)
+
+
+k8 rollout
+update - changes
+
+new Image - push
+
+kubectl set image deployment my-ngnix(name) -- weappdemo(container name) (new image name)
+
+
+reverse the image
+
+kubectl set image deployment my-ngnix(name) -- weappdemo(container name) (new image name) - incorrect path - updating stuc
+
+
+kubectl rollout status deployment mywebapp(image name)
+
+kubectl rollout undo deployment mywebapp(image name)
+
+
+self healing
+
+auto restart - uprunning
+
+scaling
+stop not for sec - no down time
+multiple instance
+
+kubectl scale deloyment node-app-replicas=4
+
+# yaml config
+
+(deployment | pods )
+
+deployment
+anyname.yml
+
+kubectl apply -f anyname.yml
+
+
+
+service
+anyname.yml
+
+kubectl get services
+
+kubectl apply -f anyname.yml
+minikube service my-nginx(service name)
+
+
+
+multiple container
+app - db
+
+local
+docker run -p 27017:27017 -d --name mongodb(name) mango
+
+npm install
+
+pull image
+
+docker pull imagename
+
+docker run -d -p 27017:27017 --network my-net --name mango mango
+
+docker run --network my-net -p 3000:3000 --name myapp (pull repo)
+
+deploy
+multi container - pod
+run each container in seperate pod
+
+single POD
+two image - node - mongo
+
+deploy - containers - multiple container
+service -
+
+single file
+
+ deploy
+ ---
+ service
+
+
+
+difference POD
+
+dynamic port and lost change
+using env
+
+mongo config
+
+
+
+volumes & data
+Data safe
+
+outside cluster
+
+persistant volumn
+
+host-pv.yml
+
+kubectl get sc (store class) (handle data)
+
+
+
+
+
+
+
+
+
+
+
+upto : 1:35
