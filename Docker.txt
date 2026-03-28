@@ -1,0 +1,77 @@
+Docker file
+
+Image - think as whole application
+command
+docker build .
+docker image ls
+
+Container
+docker run image ID
+stop - docker ps | docker stop Unique Name
+
+Access to brower
+docker run -p 3000 : 3000 image ID
+
+running background
+stop
+docker run -d -p 3000 : 3000 image ID
+
+
+multiple container
+new port : 4000
+docker run -d -p 4000 : 3000 image ID
+
+manage container
+docker ps -a (all)
+docker rm (remove)
+docker run -d --rm -p  4000 : 3000 image ID (remove after stop)
+
+name
+docker run -d --rm  --name "anything" -p  4000 : 3000 image ID
+
+
+Image manegment
+docker build -t mywebapp:01 . (replace by image id)
+delete - docker rmi mywebapp:01
+
+
+
+update project
+auto update
+docker run -d --rm  --name "anything" -p  4000 : 3000 mywebapp:01
+old version
+docker run -d --rm  --name "anything" -p  4000 : 3000 newname:02
+
+docker image (pre define image )
+docker pull python: version
+docker run python:latest
+
+webserver
+docker pull ngnix
+docker image ls
+docker run -p  8080:80 ngnix:latest
+
+interactive mode
+docker run -it image ID (interactive terminal)
+
+dokcer hub
+local image -> public
+create a repo - name
+
+docker login
+
+create a same as repo image
+
+renaming
+docker tag  old Image name new Image name
+
+
+pull image
+docker pull imagename: version
+docker run -p 3000:3000
+
+
+docker volumn
+
+
+upto 1:38

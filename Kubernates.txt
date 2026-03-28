@@ -1,0 +1,148 @@
+1. What is Kubernetes? (Simple Definition)
+
+Kubernetes is a container orchestration tool.
+
+It:
+
+runs Docker containers
+
+manages them automatically
+
+keeps applications alive, scalable, and stable
+
+💡 Docker runs containers.
+💡 Kubernetes runs Docker at scale.
+
+2. The Core Problem After Docker
+
+Docker solves:
+
+“It runs the same everywhere”
+
+But Docker alone cannot handle:
+
+❌ Hundreds of containers
+❌ Multiple servers
+❌ Auto-restart on failure
+❌ Load balancing
+❌ Scaling up/down
+❌ Zero-downtime deployments
+
+
+3. Real Problem Scenario (Before Kubernetes)
+
+Imagine:
+
+You have 50 containers
+
+Running on 10 servers
+
+One server crashes 💥
+
+Questions you must answer manually:
+
+Which containers died?
+
+Where should they restart?
+
+How to balance traffic?
+
+How to deploy a new version safely?
+
+➡️ This is operational hell.
+
+
+4. What Kubernetes Solves (The Solution)
+
+Kubernetes automates container management.
+
+✅ Kubernetes provides:
+
+Auto-scheduling
+
+Auto-restarts
+
+Auto-scaling
+
+Load balancing
+
+Self-healing
+
+Rolling updates
+
+Service discovery
+
+📌 You tell Kubernetes WHAT you want, not HOW to do it.
+
+5. Core Kubernetes Concepts (Very Important)
+
+Concept	Meaning
+Cluster	Group of machines
+Node	  One machine (VM or physical)
+Pod	Smallest   unit (1+ containers)
+Deployment	  Manages replicas
+Service	Exposes pods to network
+ConfigMap	  App configuration
+Secret	     Sensitive data
+Ingress	External HTTP access
+
+8. Kubernetes Architecture (High-Level)
+Control Plane (Brain)
+
+API Server
+
+Scheduler
+
+Controller Manager
+
+etcd (state storage)
+
+Worker Nodes (Muscle)
+
+kubelet
+
+container runtime (Docker / containerd)
+
+pods
+
+9. Docker vs Kubernetes (Clear Difference)
+Docker	Kubernetes
+Runs containers	Manages containers
+Single machine focus	Multi-machine clusters
+Manual scaling	Auto scaling
+No self-healing	Self-healing
+No traffic routing	Built-in load balancing
+
+
+
+kubernetes
+:
+container orchestration
+master of container
+
+k8s
+deploy - get a cluster ( group of nodes )
+master | worker nodes
+
+components
+api serve
+
+POD
+single instance of
+
+master
+api server ()
+schedular
+ETCD
+control manager
+
+worker node
+kubelet
+
+
+features
+
+installation
+
+
+upto : 38:07
